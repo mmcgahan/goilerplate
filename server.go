@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gorilla/mux"
 	"html/template"
+	"log"
 	"net/http"
 )
 
@@ -47,6 +48,6 @@ func main() {
 	fmt.Printf("Starting http Server ...\n")
 	err := http.ListenAndServe("0.0.0.0:8000", nil)
 	if err != nil {
-		fmt.Errorf("ListenAndServe Error :" + err.Error())
+		log.Fatal("ListenAndServe: ", err)
 	}
 }
